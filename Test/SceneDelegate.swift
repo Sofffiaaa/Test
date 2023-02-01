@@ -11,7 +11,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
@@ -26,16 +25,24 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
     
-    var result: Date = Date()
-
+    var result: String = ""
+    //var date: Date = Date()
+    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
         
         let dateNow: Date = Date()
         
-        print(DateFormatterImp(format: String).format(date: dateNow))
-        result = dateNow
+        result = DateFormatterImp(format: "MM-dd-yyyy, h:mm:ss a").format(date: dateNow)
+    //    print(result)
+        
+        UserDefaults.standard.set(result, forKey: "dateNow")
+        
+        if result == UserDefaults.standard.string(forKey: "dateNow") {
+            let dateOfFirstSession = DateFormatterImp(format: dateNow).formatBack(date: result)!
+          
+        }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
@@ -52,11 +59,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+      
         
-        let timeOff: Date = Date()
-       // print("Время выхода: ", timeOff)
-        let timeInterval = timeOff.timeIntervalSince(result)
-      //  print(timeInterval)
+        
     }
 
 

@@ -12,10 +12,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let dateFirst: Date = Date()
+        var dateSecond: Date
         
+        let dateOfFirstSession = UserDefaults.standard.string(forKey: "dateNow")
+        dateSecond = DateFormatterImp(format: dateFirst).formatBack(date: dateOfFirstSession!)!
+        
+        let timeInterval = dateFirst.timeIntervalSince(dateSecond)
+        print("Между запусками приложения прошло: ", timeInterval)
         
         return true
     }
+    
 
     // MARK: UISceneSession Lifecycle
 

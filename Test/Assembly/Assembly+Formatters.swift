@@ -18,13 +18,15 @@ extension Assembly{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = format.rawValue
         
+        //return DateFormatterProtocol
+        
         return dateFormatter as! DateFormatterProtocol
         
     }
     
-   /* var yyyyMMdd_DateFormatter: DateFormatterProtocol {
-        let dateFormatter = DateFormatter()
+  /*  var yyyyMMdd_DateFormatter: DateFormatterProtocol {
+        let dateFormat = DateFormatter()
         dateFormatter.dateFormat = "yyyy MM dd"
-        return dateFormatter
+        return dateFormat
     }*/
 }
