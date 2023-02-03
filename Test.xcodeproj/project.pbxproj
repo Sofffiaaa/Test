@@ -16,6 +16,11 @@
 		2A08998429851A770025C993 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08998329851A770025C993 /* DateFormatter.swift */; };
 		2A08998829852C7A0025C993 /* Assembly+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08998729852C7A0025C993 /* Assembly+Formatters.swift */; };
 		2A08998A29852F040025C993 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08998929852F040025C993 /* Assembly.swift */; };
+		2A37FE29298ABCFD00660358 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE28298ABCFD00660358 /* Profile.swift */; };
+		2A37FE2C298AC2E500660358 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2B298AC2E500660358 /* DataStorage.swift */; };
+		2A37FE2E298AC36800660358 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */; };
+		2A37FE30298AC5F300660358 /* Assembly+DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2F298AC5F300660358 /* Assembly+DataStorage.swift */; };
+		2A37FE33298C557A00660358 /* Assembly+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE32298C557A00660358 /* Assembly+Profile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +35,11 @@
 		2A08998329851A770025C993 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		2A08998729852C7A0025C993 /* Assembly+Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Formatters.swift"; sourceTree = "<group>"; };
 		2A08998929852F040025C993 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		2A37FE28298ABCFD00660358 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		2A37FE2B298AC2E500660358 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
+		2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
+		2A37FE2F298AC5F300660358 /* Assembly+DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+DataStorage.swift"; sourceTree = "<group>"; };
+		2A37FE32298C557A00660358 /* Assembly+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Profile.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +72,8 @@
 		2A08996D298519D10025C993 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				2A37FE2A298AC2CE00660358 /* DataStorage */,
+				2A37FE27298ABCD400660358 /* Entity */,
 				2A08998629852C2D0025C993 /* Assembly */,
 				2A08998229851A570025C993 /* Utils */,
 				2A08996E298519D10025C993 /* AppDelegate.swift */,
@@ -88,8 +100,27 @@
 			children = (
 				2A08998729852C7A0025C993 /* Assembly+Formatters.swift */,
 				2A08998929852F040025C993 /* Assembly.swift */,
+				2A37FE2F298AC5F300660358 /* Assembly+DataStorage.swift */,
+				2A37FE32298C557A00660358 /* Assembly+Profile.swift */,
 			);
 			path = Assembly;
+			sourceTree = "<group>";
+		};
+		2A37FE27298ABCD400660358 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				2A37FE28298ABCFD00660358 /* Profile.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		2A37FE2A298AC2CE00660358 /* DataStorage */ = {
+			isa = PBXGroup;
+			children = (
+				2A37FE2B298AC2E500660358 /* DataStorage.swift */,
+				2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */,
+			);
+			path = DataStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,8 +197,13 @@
 				2A08998829852C7A0025C993 /* Assembly+Formatters.swift in Sources */,
 				2A08998A29852F040025C993 /* Assembly.swift in Sources */,
 				2A08998429851A770025C993 /* DateFormatter.swift in Sources */,
+				2A37FE2C298AC2E500660358 /* DataStorage.swift in Sources */,
+				2A37FE29298ABCFD00660358 /* Profile.swift in Sources */,
+				2A37FE30298AC5F300660358 /* Assembly+DataStorage.swift in Sources */,
 				2A089973298519D10025C993 /* ViewController.swift in Sources */,
+				2A37FE2E298AC36800660358 /* UserDefaultStorage.swift in Sources */,
 				2A08996F298519D10025C993 /* AppDelegate.swift in Sources */,
+				2A37FE33298C557A00660358 /* Assembly+Profile.swift in Sources */,
 				2A089971298519D10025C993 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

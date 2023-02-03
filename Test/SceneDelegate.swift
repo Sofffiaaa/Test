@@ -38,11 +38,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     //    print(result)
         
         UserDefaults.standard.set(result, forKey: "dateNow")
+        UserDefaults.standard.synchronize()
         
-        if result == UserDefaults.standard.string(forKey: "dateNow") {
-            let dateOfFirstSession = DateFormatterImp(format: dateNow).formatBack(date: result)!
+     //   if result == UserDefaults.standard.string(forKey: "dateNow") {
+     //       let dateOfFirstSession = DateFormatterImp(format: dateNow).formatBack(date: result)!
           
-        }
+        //  }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {
