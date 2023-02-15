@@ -28,7 +28,7 @@ final class UserDefaultStorage: DataStorage{
         userDefaults.set(data, forKey: key)
         
     }
-    func value<Value: Codable>(key: String) -> Value?{
+    func value<Value: Decodable>(key: String) -> Value?{
         guard let data = userDefaults.data(forKey: key) else {
             return nil
         }
@@ -36,5 +36,3 @@ final class UserDefaultStorage: DataStorage{
         return try? decoder.decode(Value.self, from: data)
     }
 }
-
-//extension UserDefaultStorage: Dat

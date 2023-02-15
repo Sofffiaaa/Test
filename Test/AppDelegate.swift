@@ -9,58 +9,28 @@ import UIKit
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
-    let assembly = Assembly()
-    lazy var dataStorage = assembly.dataStorage
     
-  /*  enum StorageKey {
-        
-        case profile
-        
-    }*/
+    let encoder = JSONEncoder()
+    private let assembly = Assembly()
+    
+    lazy var dataStorage = assembly.dataStorage
+    lazy var apiClient = assembly.apiClient
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        print("didFinishLaunchingWithOptions")
         
-        let decoder = JSONDecoder()
-            
-        let encoder = JSONEncoder()
+        print("start load profile...\(Thread.isMainThread)")
         
-        let userDefaults = UserDefaults.standard
-        let key = "key"
-        
-        guard userDefaults.object(forKey: key) != nil else {
-            let profile = Profile(id: "12345", name: "text")
-            
-            if (try? encoder.encode(profile)) != nil {
-                dataStorage.save(value: profile, key: key)
-                print(String(reflecting: userDefaults.object(forKey: key)))
-        }
-            if let profileDecode = try? decoder.decode(Profile.self, from: userDefaults.data(forKey: key)!){
-                print(String(reflecting: profileDecode))
+        apiClient.profile{ result in
+            switch result {
+            case .success(let profile):
+                print("Download successful \(profile)")
+            case .failure(let error):
+                print("Download error \(error)")
             }
-            return true
         }
-        /*let profileDecode = userDefaults.object(forKey: key)
-        if ((try? decoder.decode(Profile.self, from: profileDecode as! Data)) != nil){
-            print(profileDecode!)
-        }
-      //  print(userDefaults.object(forKey: key)!)*/
         
-        
-    
-        
-       // guard let data = try? encoder.encode(Profile(id: "1234", name: "text")) else {
-       //     let profile = try? decoder.decode(Profile.self, from: data)
-        //let profile = try? decoder.decode(Profile.self, from: data)
-        //  }
-       // userDefaults.set(profile, forKey: "key")
-        
-        
-       /* let dateOfFirstSession = UserDefaults.standard.string(forKey: "dateNow")
-        dateSecond = DateFormatterImp(format: dateFirst).formatBack(date: dateOfFirstSession!)!
-        
-        let timeInterval = dateFirst.timeIntervalSince(dateSecond)
-        print("Между запусками приложения прошло: ", timeInterval)*/
+        print("...end load profile \(Thread.isMainThread)")
         
         return true
     }

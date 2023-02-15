@@ -7,8 +7,6 @@
 
 import Foundation
 
-//let profile = Profile(id: String, name: String)
-
 extension Assembly: CustomDebugStringConvertible {
     var debugDescription: String {
         return "\(Profile.self)"
