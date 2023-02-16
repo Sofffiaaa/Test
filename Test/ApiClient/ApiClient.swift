@@ -16,7 +16,7 @@ final class ApiClient {
     
     private let decoder: JSONDecoder
     
-    func profile(completion: @escaping (Result<ResponseBody<ProfileResponseData>, ProfileError>) -> Void) {
+    func profile<ProfileResponseData: Decodable>(_type: ProfileResponseData.Type, completion: @escaping (Result<ResponseBody<ProfileResponseData>, ProfileError>) -> Void) {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             
             guard let self = self else {

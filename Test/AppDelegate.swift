@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("start load profile...\(Thread.isMainThread)")
         
-        apiClient.profile{ result in
+        apiClient.profile(_type: ProfileResponseData.self){ result in
             switch result {
             case .success(let profile):
                 print("Download successful \(profile)")
