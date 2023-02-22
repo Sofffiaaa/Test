@@ -11,7 +11,6 @@ protocol DateFormatterProtocol {
     func format(date: Date) -> String
     func formatBack(date: String) -> Date?
 }
-
 final class DateFormatterImp {
     init(format: String) {
         dateFormatter = DateFormatter()

@@ -13,7 +13,7 @@ struct Profile: Codable {
     let id: ID
     let name: String
     let firstName: String
-    let birthday: String
+    let birthday: Date
     
    
     private enum CodingKeys: String, CodingKey {
@@ -21,6 +21,6 @@ struct Profile: Codable {
         case name = "name"
         case firstName = "first_name"
         case birthday = "happyday"
-        }
+    }
 }
 

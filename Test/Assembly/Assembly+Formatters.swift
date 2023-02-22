@@ -14,10 +14,9 @@ extension Assembly{
         case HHmmss = "HH:mm:ss"
     }
     
-    func dateFormatter(format: DateFormat) -> DateFormatterProtocol{
+    func dateFormatter(format: DateFormat) -> DateFormatter{
         let dateFormatter = DateFormatter()
-        
-        return dateFormatter as! DateFormatterProtocol
-        
+        dateFormatter.dateFormat = format.rawValue
+        return dateFormatter
     }
 }

@@ -16,7 +16,17 @@ final class ApiClient {
     
     private let decoder: JSONDecoder
     
-    func profile<ProfileResponseData: Decodable>(_type: ProfileResponseData.Type, completion: @escaping (Result<ResponseBody<ProfileResponseData>, ProfileError>) -> Void) {
+    enum ProfileError: String, Swift.Error{
+        case invalidURL = "The profile could not be found"
+        case invalidResponse = "Invalid response from the server"
+        case invalidData = "The data received from the server was invalid"
+    }
+    
+    func request<ResponseData: Decodable>(
+        _type: ResponseData.Type,
+        url: URL?,
+        completion: @escaping (Result<ResponseBody<ResponseData>, ApiClient.ProfileError>) -> Void
+    ) {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
             
             guard let self = self else {
@@ -24,27 +34,35 @@ final class ApiClient {
             }
             
             print("Start background job \(Thread.isMainThread)")
-            guard let url = Bundle.main.url(forResource: "Profile", withExtension: "json") else {
-                completion(.failure(.invalidURL))
+            guard let url = url else {
+                finish(result: .failure(.invalidURL), completion: completion)
                 return
             }
             
             guard let data = try? Data(contentsOf: url) else {
-                completion(.failure(.invalidData))
+                finish(result: .failure(.invalidData), completion: completion)
                 return
             }
             
-            if let responseBody = try? self.decoder.decode(ResponseBody<ProfileResponseData>.self, from: data){
-                DispatchQueue.main.async {
-                    completion(.success(responseBody))
-                }
-            } else {
-                completion(.failure(.invalidResponse))
+            guard let responseBody = try? self.decoder.decode(ResponseBody<ResponseData>.self, from: data) else {
+                finish(result: .failure(.invalidResponse), completion: completion)
+                return
             }
+            
+            finish(result: .success(responseBody), completion: completion)
             
             print("finish job \(Thread.isMainThread)")
         }
         
     }
     
+}
+
+private func finish<ResponseData: Decodable> (
+    result: Result<ResponseBody<ResponseData>, ApiClient.ProfileError>,
+    completion: @escaping (Result<ResponseBody<ResponseData>, ApiClient.ProfileError>) -> Void)
+{
+    DispatchQueue.main.async {
+        completion(result)
+    }
 }

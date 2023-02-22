@@ -21,6 +21,9 @@ extension Assembly {
     }
     
     var decoder: JSONDecoder {
-        JSONDecoder()
+        let decoder = JSONDecoder()
+        decoder.keyDecodingStrategy = .convertFromSnakeCase
+        decoder.dateDecodingStrategy = .formatted(dateFormatter(format: .yyyyMMdd))
+        return decoder
     }
 }
