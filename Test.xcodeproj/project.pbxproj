@@ -21,6 +21,12 @@
 		2A37FE2E298AC36800660358 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */; };
 		2A37FE30298AC5F300660358 /* Assembly+DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2F298AC5F300660358 /* Assembly+DataStorage.swift */; };
 		2A37FE33298C557A00660358 /* Assembly+Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE32298C557A00660358 /* Assembly+Profile.swift */; };
+		2A452A2629ABE82600838162 /* City.json in Resources */ = {isa = PBXBuildFile; fileRef = 2A452A2529ABE82600838162 /* City.json */; };
+		2A452A2929ABEAAD00838162 /* BootstrapDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2829ABEAAD00838162 /* BootstrapDataProvider.swift */; };
+		2A452A2C29AEA59B00838162 /* CityResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2B29AEA59B00838162 /* CityResponseData.swift */; };
+		2A452A2E29AEA60500838162 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2D29AEA60500838162 /* City.swift */; };
+		2A452A3029AEB2FC00838162 /* BootstrapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2F29AEB2FC00838162 /* BootstrapData.swift */; };
+		2A452A3229AEBB5400838162 /* Assembly+DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A3129AEBB5400838162 /* Assembly+DataProvider.swift */; };
 		2A8DC3A5298D5BB3004F23B7 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DC3A4298D5BB3004F23B7 /* ApiClient.swift */; };
 		2A8DC3A8298D5D66004F23B7 /* ProfileResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DC3A7298D5D66004F23B7 /* ProfileResponseData.swift */; };
 		2A8DC3AA298D5DBA004F23B7 /* ApiErrorData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DC3A9298D5DBA004F23B7 /* ApiErrorData.swift */; };
@@ -46,6 +52,12 @@
 		2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
 		2A37FE2F298AC5F300660358 /* Assembly+DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+DataStorage.swift"; sourceTree = "<group>"; };
 		2A37FE32298C557A00660358 /* Assembly+Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Profile.swift"; sourceTree = "<group>"; };
+		2A452A2529ABE82600838162 /* City.json */ = {isa = PBXFileReference; explicitFileType = text.json; path = City.json; sourceTree = "<group>"; };
+		2A452A2829ABEAAD00838162 /* BootstrapDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapDataProvider.swift; sourceTree = "<group>"; };
+		2A452A2B29AEA59B00838162 /* CityResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityResponseData.swift; sourceTree = "<group>"; };
+		2A452A2D29AEA60500838162 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		2A452A2F29AEB2FC00838162 /* BootstrapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapData.swift; sourceTree = "<group>"; };
+		2A452A3129AEBB5400838162 /* Assembly+DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+DataProvider.swift"; sourceTree = "<group>"; };
 		2A8DC3A4298D5BB3004F23B7 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		2A8DC3A6298D5BD2004F23B7 /* Profile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profile.json; sourceTree = "<group>"; };
 		2A8DC3A7298D5D66004F23B7 /* ProfileResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponseData.swift; sourceTree = "<group>"; };
@@ -84,9 +96,10 @@
 		2A08996D298519D10025C993 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				2A452A2A29AE9BBC00838162 /* DataProvider */,
+				2A37FE2A298AC2CE00660358 /* DataStorage */,
 				2A37FE35298D5AFF00660358 /* Recources */,
 				2A37FE34298D5A5C00660358 /* ApiClient */,
-				2A37FE2A298AC2CE00660358 /* DataStorage */,
 				2A37FE27298ABCD400660358 /* Entity */,
 				2A08998629852C2D0025C993 /* Assembly */,
 				2A08998229851A570025C993 /* Utils */,
@@ -117,6 +130,7 @@
 				2A37FE2F298AC5F300660358 /* Assembly+DataStorage.swift */,
 				2A37FE32298C557A00660358 /* Assembly+Profile.swift */,
 				2A8DC3AD298D60D5004F23B7 /* Assembly+ApiClient.swift */,
+				2A452A3129AEBB5400838162 /* Assembly+DataProvider.swift */,
 			);
 			path = Assembly;
 			sourceTree = "<group>";
@@ -128,6 +142,9 @@
 				2A8DC3A7298D5D66004F23B7 /* ProfileResponseData.swift */,
 				2A8DC3A9298D5DBA004F23B7 /* ApiErrorData.swift */,
 				2A8DC3AB298D5E15004F23B7 /* ResponseBody.swift */,
+				2A452A2B29AEA59B00838162 /* CityResponseData.swift */,
+				2A452A2D29AEA60500838162 /* City.swift */,
+				2A452A2F29AEB2FC00838162 /* BootstrapData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -153,8 +170,17 @@
 			isa = PBXGroup;
 			children = (
 				2A8DC3A6298D5BD2004F23B7 /* Profile.json */,
+				2A452A2529ABE82600838162 /* City.json */,
 			);
 			path = Recources;
+			sourceTree = "<group>";
+		};
+		2A452A2A29AE9BBC00838162 /* DataProvider */ = {
+			isa = PBXGroup;
+			children = (
+				2A452A2829ABEAAD00838162 /* BootstrapDataProvider.swift */,
+			);
+			path = DataProvider;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,6 +244,7 @@
 				2A08997B298519D30025C993 /* LaunchScreen.storyboard in Resources */,
 				2A95EA24299B6C5A00CB6F7E /* Profile.json in Resources */,
 				2A089978298519D30025C993 /* Assets.xcassets in Resources */,
+				2A452A2629ABE82600838162 /* City.json in Resources */,
 				2A089976298519D10025C993 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -231,9 +258,13 @@
 			files = (
 				2A08998829852C7A0025C993 /* Assembly+Formatters.swift in Sources */,
 				2A8DC3A8298D5D66004F23B7 /* ProfileResponseData.swift in Sources */,
+				2A452A3029AEB2FC00838162 /* BootstrapData.swift in Sources */,
 				2A08998A29852F040025C993 /* Assembly.swift in Sources */,
 				2A8DC3AC298D5E15004F23B7 /* ResponseBody.swift in Sources */,
+				2A452A3229AEBB5400838162 /* Assembly+DataProvider.swift in Sources */,
 				2A08998429851A770025C993 /* DateFormatter.swift in Sources */,
+				2A452A2C29AEA59B00838162 /* CityResponseData.swift in Sources */,
+				2A452A2929ABEAAD00838162 /* BootstrapDataProvider.swift in Sources */,
 				2A37FE2C298AC2E500660358 /* DataStorage.swift in Sources */,
 				2A37FE29298ABCFD00660358 /* Profile.swift in Sources */,
 				2A8DC3AE298D60D5004F23B7 /* Assembly+ApiClient.swift in Sources */,
@@ -244,6 +275,7 @@
 				2A37FE33298C557A00660358 /* Assembly+Profile.swift in Sources */,
 				2A089971298519D10025C993 /* SceneDelegate.swift in Sources */,
 				2A8DC3A5298D5BB3004F23B7 /* ApiClient.swift in Sources */,
+				2A452A2E29AEA60500838162 /* City.swift in Sources */,
 				2A8DC3AA298D5DBA004F23B7 /* ApiErrorData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

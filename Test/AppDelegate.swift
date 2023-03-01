@@ -12,33 +12,25 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    private let assembly = Assembly()    
+    private let assembly = Assembly()
     lazy var dataStorage = assembly.dataStorage
     lazy var apiClient = assembly.apiClient
+    lazy var bootstrapDataProvider = assembly.bootstrapDataProvider
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
         print("didFinishLaunchingWithOptions")
         
-        print("start load profile...\(Thread.isMainThread)")
-        
-        apiClient.request(_type: ProfileResponseData.self,
-                          url: Bundle.main.url(forResource: "Profile", withExtension: "json")
-        ) { [weak self] result in
+        bootstrapDataProvider.dataRequest { [weak self] result in
             
             guard let self = self else {
                 return
             }
             
-            switch result {
-            case .success(let response):
-                self.dataStorage.save(value: response.data?.profile, key: "key")
-            case .failure(let error):
-                print("Download error \(error.rawValue)")
-            }
+            self.dataStorage.save(value: result.profile, key: "profile")
+            self.dataStorage.save(value: result.city, key: "city")
+            
         }
-        
-        print("...end load profile \(Thread.isMainThread)")
         
         return true
     }
