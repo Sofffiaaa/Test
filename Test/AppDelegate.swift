@@ -7,8 +7,6 @@
 
 import UIKit
 
-// обработать дополнительно даты 
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -21,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print("didFinishLaunchingWithOptions")
         
-        bootstrapDataProvider.dataRequest { [weak self] result in
+      /*  bootstrapDataProvider.dataRequest { [weak self] result in
             
             guard let self = self else {
                 return
@@ -30,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             self.dataStorage.save(value: result.profile, key: "profile")
             self.dataStorage.save(value: result.city, key: "city")
             
-        }
+        }*/
         
         return true
     }

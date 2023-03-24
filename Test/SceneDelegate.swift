@@ -25,25 +25,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // The scene may re-connect later, as its session was not necessarily discarded (see `application:didDiscardSceneSessions` instead).
     }
     
-    var result: String = ""
-    //var date: Date = Date()
-    
     func sceneDidBecomeActive(_ scene: UIScene) {
         // Called when the scene has moved from an inactive state to an active state.
         // Use this method to restart any tasks that were paused (or not yet started) when the scene was inactive.
-        
-        let dateNow: Date = Date()
-        
-        result = DateFormatterImp(format: "MM-dd-yyyy, h:mm:ss a").format(date: dateNow)
-    //    print(result)
-        
-        UserDefaults.standard.set(result, forKey: "dateNow")
-        UserDefaults.standard.synchronize()
-        
-     //   if result == UserDefaults.standard.string(forKey: "dateNow") {
-     //       let dateOfFirstSession = DateFormatterImp(format: dateNow).formatBack(date: result)!
-          
-        //  }
     }
 
     func sceneWillResignActive(_ scene: UIScene) {

@@ -9,59 +9,44 @@ import Foundation
 
 final class BootstrapDataProvider {
     
-    private let apiClient: ApiClient
-    
     init(apiClient: ApiClient){
         self.apiClient = apiClient
     }
     
-    private var profile: Profile?
-    private var city: City?
+    private let apiClient: ApiClient
     
     private let group = DispatchGroup()
     
-    func dataRequest(completion: @escaping (BootstrapData) -> Void) {
-        DispatchQueue.global(qos: .userInteractive).async { [weak self] in
+   /* func dataRequest(completion: @escaping (Result<(profile: Profile, city: City), Swift.Error>) -> Void) {
+        
+        var profileResult: Result<ResponseBody<ProfileResponseData>, ApiClient.ProfileError>?
+        var cityResult: Result<ResponseBody<ProfileResponseData>, ApiClient.ProfileError>?
+        
+        group.enter()
+        apiClient.request(_type: ProfileResponseData.self) { result in
+            profileResult = result
             
-            guard let self = self else {
-                return
-            }
-            
-            self.group.enter()
-            self.apiClient.request(_type: ProfileResponseData.self,
-                                   url: Bundle.main.url(forResource: "Profile", withExtension: "json")
-            ) { result in
-                
-                switch result {
-                case .success(let response):
-                    self.profile = response.data?.profile
-                case .failure(let error):
-                    print("Download error \(error.rawValue)")
-                }
-                
-                self.group.leave()
-            }
-            
-            self.group.enter()
-            self.apiClient.request(_type: CityResponseData.self,
-                                   url: Bundle.main.url(forResource: "City", withExtension: "json")
-            ) { result in
-                
-                switch result {
-                case .success(let response):
-                    self.city = response.data?.city
-                case .failure(let error):
-                    print("Download error \(error.rawValue)")
-                }
-                
-                self.group.leave()
-            }
-            
-            self.group.notify(queue: .main) {
-                completion(BootstrapData(profile: self.profile, city: self.city))
-            }
+            profileResult = .success(<#ResponseBody<ProfileResponseData>#>)
+            self.group.leave()
             
         }
-    }
-    
+        
+        group.enter()
+        DispatchQueue.global().asyncAfter(deadline: .now() + 2) {
+            apiClient.request(_type: ProfileResponseData.self) { result in
+                cityResult = result
+                cityResult = .success(<#T##ResponseBody<ProfileResponseData>#>)
+            }
+            self.group.leave()
+        }
+        
+        group.notify(queue: .main) {
+            switch (profileResult, cityResult) {
+            case
+            }
+        }
+        
+    }*/
 }
+
+

@@ -16,6 +16,7 @@
 		2A08998429851A770025C993 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08998329851A770025C993 /* DateFormatter.swift */; };
 		2A08998829852C7A0025C993 /* Assembly+Formatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08998729852C7A0025C993 /* Assembly+Formatters.swift */; };
 		2A08998A29852F040025C993 /* Assembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A08998929852F040025C993 /* Assembly.swift */; };
+		2A281CD129C217B800EA5738 /* MaterialTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A281CD029C217B800EA5738 /* MaterialTextField.swift */; };
 		2A37FE29298ABCFD00660358 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE28298ABCFD00660358 /* Profile.swift */; };
 		2A37FE2C298AC2E500660358 /* DataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2B298AC2E500660358 /* DataStorage.swift */; };
 		2A37FE2E298AC36800660358 /* UserDefaultStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */; };
@@ -25,7 +26,6 @@
 		2A452A2929ABEAAD00838162 /* BootstrapDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2829ABEAAD00838162 /* BootstrapDataProvider.swift */; };
 		2A452A2C29AEA59B00838162 /* CityResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2B29AEA59B00838162 /* CityResponseData.swift */; };
 		2A452A2E29AEA60500838162 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2D29AEA60500838162 /* City.swift */; };
-		2A452A3029AEB2FC00838162 /* BootstrapData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A2F29AEB2FC00838162 /* BootstrapData.swift */; };
 		2A452A3229AEBB5400838162 /* Assembly+DataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A452A3129AEBB5400838162 /* Assembly+DataProvider.swift */; };
 		2A8DC3A5298D5BB3004F23B7 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DC3A4298D5BB3004F23B7 /* ApiClient.swift */; };
 		2A8DC3A8298D5D66004F23B7 /* ProfileResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A8DC3A7298D5D66004F23B7 /* ProfileResponseData.swift */; };
@@ -47,6 +47,7 @@
 		2A08998329851A770025C993 /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		2A08998729852C7A0025C993 /* Assembly+Formatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+Formatters.swift"; sourceTree = "<group>"; };
 		2A08998929852F040025C993 /* Assembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assembly.swift; sourceTree = "<group>"; };
+		2A281CD029C217B800EA5738 /* MaterialTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialTextField.swift; sourceTree = "<group>"; };
 		2A37FE28298ABCFD00660358 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2A37FE2B298AC2E500660358 /* DataStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataStorage.swift; sourceTree = "<group>"; };
 		2A37FE2D298AC36800660358 /* UserDefaultStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultStorage.swift; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		2A452A2829ABEAAD00838162 /* BootstrapDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapDataProvider.swift; sourceTree = "<group>"; };
 		2A452A2B29AEA59B00838162 /* CityResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityResponseData.swift; sourceTree = "<group>"; };
 		2A452A2D29AEA60500838162 /* City.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
-		2A452A2F29AEB2FC00838162 /* BootstrapData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BootstrapData.swift; sourceTree = "<group>"; };
 		2A452A3129AEBB5400838162 /* Assembly+DataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Assembly+DataProvider.swift"; sourceTree = "<group>"; };
 		2A8DC3A4298D5BB3004F23B7 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		2A8DC3A6298D5BD2004F23B7 /* Profile.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Profile.json; sourceTree = "<group>"; };
@@ -96,6 +96,7 @@
 		2A08996D298519D10025C993 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				2A281CCF29C2179C00EA5738 /* UI */,
 				2A37FE35298D5AFF00660358 /* Recources */,
 				2A37FE34298D5A5C00660358 /* ApiClient */,
 				2A452A2A29AE9BBC00838162 /* DataProvider */,
@@ -135,6 +136,14 @@
 			path = Assembly;
 			sourceTree = "<group>";
 		};
+		2A281CCF29C2179C00EA5738 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				2A281CD029C217B800EA5738 /* MaterialTextField.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
 		2A37FE27298ABCD400660358 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,7 +153,6 @@
 				2A8DC3AB298D5E15004F23B7 /* ResponseBody.swift */,
 				2A452A2B29AEA59B00838162 /* CityResponseData.swift */,
 				2A452A2D29AEA60500838162 /* City.swift */,
-				2A452A2F29AEB2FC00838162 /* BootstrapData.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -258,11 +266,11 @@
 			files = (
 				2A08998829852C7A0025C993 /* Assembly+Formatters.swift in Sources */,
 				2A8DC3A8298D5D66004F23B7 /* ProfileResponseData.swift in Sources */,
-				2A452A3029AEB2FC00838162 /* BootstrapData.swift in Sources */,
 				2A08998A29852F040025C993 /* Assembly.swift in Sources */,
 				2A8DC3AC298D5E15004F23B7 /* ResponseBody.swift in Sources */,
 				2A452A3229AEBB5400838162 /* Assembly+DataProvider.swift in Sources */,
 				2A08998429851A770025C993 /* DateFormatter.swift in Sources */,
+				2A281CD129C217B800EA5738 /* MaterialTextField.swift in Sources */,
 				2A452A2C29AEA59B00838162 /* CityResponseData.swift in Sources */,
 				2A452A2929ABEAAD00838162 /* BootstrapDataProvider.swift in Sources */,
 				2A37FE2C298AC2E500660358 /* DataStorage.swift in Sources */,

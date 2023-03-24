@@ -24,7 +24,6 @@ final class ApiClient {
     
     func request<ResponseData: Decodable>(
         _type: ResponseData.Type,
-        url: URL?,
         completion: @escaping (Result<ResponseBody<ResponseData>, ApiClient.ProfileError>) -> Void
     ) {
         DispatchQueue.global(qos: .userInteractive).async { [weak self] in
@@ -34,7 +33,7 @@ final class ApiClient {
             }
             
             print("Start background job \(Thread.isMainThread)")
-            guard let url = url else {
+            guard let url = Bundle.main.url(forResource: "Profile", withExtension: "json") else {
                 finish(result: .failure(.invalidURL), completion: completion)
                 return
             }
